@@ -4,6 +4,10 @@
   margin: 0 auto;
   border-bottom: 1px solid;
 
+  mark {
+    background-color: $color-yellow;
+  }
+
   &__question,
   &__answer {
     padding: 1em 3.5em 1em 3em;

@@ -4,7 +4,7 @@ html(lang="ja")
     meta(charset="UTF-8")
     meta(name="viewport", content="widt.p-faq__questionh=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Gulpをはじめよう
+    title PugとSassでコーディングする環境が整いました!
     link(rel="stylesheet", href="/css/index.css")
   body
     include _include/header
@@ -36,28 +36,49 @@ html(lang="ja")
             button(type="button" data-target="a-2").p-faq-button.js-accordion-trigger
               span.p-faq-button__line
                 span.u-visually-hidden 開く
-          dd.p-faq__answer#a-2 ターミナルで一旦gulpを停止して(ctrl + c)、再度gulpを立ち上げてください(npx gulp)。distディレクトリが再生成されて読み込まれるようになります。
+          dd.p-faq__answer#a-2
+            |ターミナルで一旦gulpを停止して(
+            mark ctrl + c
+            |&nbsp;)、再度gulpを立ち上げてください(
+            mark npx gulp
+            |&nbsp;)。distディレクトリが再生成されて読み込まれるようになります。
           dt.p-faq__question pugファイルを追加したが表示されない。
             button(type="button" data-target="a-3").p-faq-button.js-accordion-trigger
               span.p-faq-button__line
                 span.u-visually-hidden 開く
-          dd.p-faq__answer#a-3 ターミナルで一旦gulpを停止して(ctrl + c)、再度gulpを立ち上げてください(npx gulp)。distディレクトリがsrcディレクトリの構成のまま再生成されます。
+          dd.p-faq__answer#a-3
+            |ターミナルで一旦gulpを停止して(
+            mark ctrl + c
+            |&nbsp;)、再度gulpを立ち上げてください(
+            mark npx gulp
+            |&nbsp;)。distディレクトリがsrcディレクトリの構成のまま再生成されます。
           dt.p-faq__question pugファイルを削除したのにコンパイルされたhtmlがずっと残っている。
             button(type="button" data-target="a-4").p-faq-button.js-accordion-trigger
                span.p-faq-button__line
                 span.u-visually-hidden 開く
-          dd.p-faq__answer#a-4 ターミナルで一旦gulpを停止して(ctrl + c)、再度gulpを立ち上げてください(npx gulp)。distディレクトリが再生成されて今のディレクトリ構成に合わせてコンパイルされます。
+          dd.p-faq__answer#a-4
+            |ターミナルで一旦gulpを停止して(
+            mark ctrl + c
+            |&nbsp;)再度gulpを立ち上げてください(
+            mark npx gulp
+            |&nbsp;)。distディレクトリが再生成されて今のディレクトリ構成に合わせてコンパイルされます。
           dt.p-faq__question pugのパーツ用のファイルまでコンパイルされてしまいます。
             button(type="button" data-target="a-5").p-faq-button.js-accordion-trigger
               span.p-faq-button__line
                 span.u-visually-hidden 開く
-          dd.p-faq__answer#a-5 パーツ用のファイルは/src/pages/_include/配下に格納すればコンパイルされません。
+          dd.p-faq__answer#a-5
+            |パーツ用のファイルは
+            mark /src/pages/_include/配下
+            |に格納すればコンパイルされません。
           dt.p-faq__question コンパイルをやめたい。
             button(type="button" data-target="a-6").p-faq-button.js-accordion-trigger
               span.p-faq-button__line
                 span.u-visually-hidden 開く
           dd.p-faq__answer#a-6
-            |`$ npx gulp`を実行したターミナルでっショートカット`ctrl + c`を実行。
+            mark npx gulp
+            |を実行したターミナルでショートカット
+            mark ctrl + c
+            |を実行。
             br
             |gulpを実行中に間違ってターミナルを閉じて停止できなくなってしまった場合はプロセスの停止を行います。
             br
