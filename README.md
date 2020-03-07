@@ -1,3 +1,5 @@
+![GulpではじめるPugとSass](http://m1011522.xsrv.jp/other/images/gulpenv-pug-sass.png)
+
 # はじめに
 ## 概要
 
@@ -5,7 +7,6 @@
 gulpを使用するためには下記が必要となります。
 
 - node.js
-- xcodebuild(必要に応じて)
 
 また、gulpfileの設定により`$ npx gulp`で下記の動作を行います。
 
@@ -36,26 +37,6 @@ gulpを使用するためには下記が必要となります。
 基本的に**いじるのはsrcディレクトリ配下のみ**です。
 srcディレクトリ配下で作成されたファイルは、ファイル構成を保ったままdistディレクトリにコンパイルされます。
 ページを公開するときはdistディレクトリ内をサーバにアップロードします。
-
-### セットアップ後のディレクトリ構成
-セットアップが完了すると下記のディレクトリ構成になります。
-(`★`が増えます。)
-
-root
-├─ dist(★)
-    ├─ css
-    ├─ images
-    ├─ index.html
-    ├─ js
-├─ gulpfile.js
-├─ node_modules(★)
-├─ package.json
-├─ README.md
-└─ src
-    ├─ images
-    ├─ js
-    ├─ pages
-    ├─ scss
 
 ## srcディレクトリの概要
 ### imagesディレクトリ
@@ -135,7 +116,7 @@ $ npx gulp
 
 ## コマンドライン
 ```
-// コンパイル開始
+// 自動コンパイルを開始
 $ npx gulp
 ```
 ※gulpfileがある階層で実行しないとエラーになります。
