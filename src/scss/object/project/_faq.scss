@@ -1,0 +1,106 @@
+.p-faq {
+  max-width: 960px;
+  width: 85%;
+  margin: 0 auto;
+  border-bottom: 1px solid;
+
+  &__question,
+  &__answer {
+    padding: 1em 3.5em 1em 3em;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    position: relative;
+
+    &::before {
+      font-size: fz(18);
+      font-weight: bold;
+      display: inline-block;
+      position: absolute;
+      left: 1.25em;
+      top: 0.8em;
+    }
+  }
+
+  &__question {
+    border-top: 1px solid;
+    position: relative;
+
+    &::before {
+      content: 'Q.';
+    }
+  }
+
+  &__answer {
+    border-top: 1px dashed;
+    display: none;
+
+    &::before {
+      content: 'A.';
+    }
+  }
+}
+
+.p-faq-button {
+  $parent: &;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid;
+  position: absolute;
+  top: 0.8em;
+  right: 1.25em;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 8px $color-black;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #8dced0;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    z-index: -1;
+  }
+
+  &__line {
+    display: inline-block;
+    background-color: $color-black;
+    width: 14px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &::after {
+      content: '';
+      display: inline-block;
+      background-color: $color-black;
+      width: 14px;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &.is-active {
+
+    &::before {
+      background-color: #f5bbbf;
+    }
+    #{$parent}__line {
+      &::after {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+    }
+  }
+}

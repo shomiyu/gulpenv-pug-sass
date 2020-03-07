@@ -1,0 +1,14 @@
+.p-hero {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+
+  &__image {
+    margin: 0 auto;
+  }
+
+  &__text {
+    font-size: fz(18);
+    font-weight: bold;
+  }
+}

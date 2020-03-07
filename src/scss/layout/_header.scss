@@ -1,0 +1,10 @@
+.l-header {
+  background-color: $color-header-background;
+  color: $color-text-secondary;
+  padding: 0.25em 1em;
+  line-height: 2;
+
+  &__title {
+    font-size: fz(16);
+  }
+}

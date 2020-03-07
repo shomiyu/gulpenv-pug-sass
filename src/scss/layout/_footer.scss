@@ -1,0 +1,11 @@
+.l-footer {
+  background-color: $color-header-background;
+  color: $color-text-secondary;
+  line-height: 1;
+  text-align: center;
+  padding: em(16, 8) 1em;
+
+  small {
+    font-size: fz(14);
+  }
+}

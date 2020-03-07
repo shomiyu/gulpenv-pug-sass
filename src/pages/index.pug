@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="widt.p-faq__questionh=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Gulpをはじめよう
+    link(rel="stylesheet", href="/css/index.css")
+  body
+    include _include/header
+
+    main.l-main
+      div.p-hero
+        figure.p-hero__image
+          img(src="/images/thanks.png", alt="たのしいGulpライフを")
+        p.p-hero__text
+          |おめでとうございます！
+          br
+          |Gulpの環境設定は完了しました！
+
+      section.l-section-primary
+        h2.l-heading-primary よくある質問
+        dl.p-faq
+          dt.p-faq__question CSSが崩れて見える、反映されない。
+            button(type="button" data-target="a-1").p-faq-button.js-accordion-trigger
+              span.p-faq-button__line
+                span.u-visually-hidden 開く
+          dd.p-faq__answer#a-1 下記を試してみてください。
+            ul
+              li 画面をリロードしてみてください。
+              li
+                |classが読み込まれているか検証ツールで確認してみてください。
+                br
+                |classがあたっていなければ①index.scssにパーシャルファイルが読み込まれているか、②classの綴りの間違いがないか確認してください。
+          dt.p-faq__question 画像を追加したが表示されない。
+            button(type="button" data-target="a-2").p-faq-button.js-accordion-trigger
+              span.p-faq-button__line
+                span.u-visually-hidden 開く
+          dd.p-faq__answer#a-2 ターミナルで一旦gulpを停止して(ctrl + c)、再度gulpを立ち上げてください(npx gulp)。distディレクトリが再生成されて読み込まれるようになります。
+          dt.p-faq__question pugファイルを追加したが表示されない。
+            button(type="button" data-target="a-3").p-faq-button.js-accordion-trigger
+              span.p-faq-button__line
+                span.u-visually-hidden 開く
+          dd.p-faq__answer#a-3 ターミナルで一旦gulpを停止して(ctrl + c)、再度gulpを立ち上げてください(npx gulp)。distディレクトリがsrcディレクトリの構成のまま再生成されます。
+          dt.p-faq__question pugファイルを削除したのにコンパイルされたhtmlがずっと残っている。
+            button(type="button" data-target="a-4").p-faq-button.js-accordion-trigger
+               span.p-faq-button__line
+                span.u-visually-hidden 開く
+          dd.p-faq__answer#a-4 ターミナルで一旦gulpを停止して(ctrl + c)、再度gulpを立ち上げてください(npx gulp)。distディレクトリが再生成されて今のディレクトリ構成に合わせてコンパイルされます。
+          dt.p-faq__question pugのパーツ用のファイルまでコンパイルされてしまいます。
+            button(type="button" data-target="a-5").p-faq-button.js-accordion-trigger
+              span.p-faq-button__line
+                span.u-visually-hidden 開く
+          dd.p-faq__answer#a-5 パーツ用のファイルは/src/pages/_include/配下に格納すればコンパイルされません。
+          dt.p-faq__question コンパイルをやめたい。
+            button(type="button" data-target="a-6").p-faq-button.js-accordion-trigger
+              span.p-faq-button__line
+                span.u-visually-hidden 開く
+          dd.p-faq__answer#a-6
+            |`$ npx gulp`を実行したターミナルでっショートカット`ctrl + c`を実行。
+            br
+            |gulpを実行中に間違ってターミナルを閉じて停止できなくなってしまった場合はプロセスの停止を行います。
+            br
+            |プロセスの停止については検索すれば出ますのでここでは割愛します。
+
+    include _include/footer
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="/js/main.js")

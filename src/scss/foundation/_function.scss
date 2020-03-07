@@ -1,0 +1,7 @@
+@function fz($size) {
+  @return ($size / 16) + rem;
+}
+
+@function em($size, $n) {
+  @return ($n / $size) + em;
+}
