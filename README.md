@@ -14,6 +14,8 @@ gulpを使用するためには下記が必要となります。
 - browser-syncの立ち上げ
 - distファイルがすでにある場合は一旦削除して再生成
 - scssのコンパイル時にはベンダープレフィックスを付与
+- cssソースマップの生成
+- 同じメディアクエリはひとまとめにする
 - js、cssは圧縮
 - imagesディレクトリは階層構造を保ったままdist配下に複製
 - pug/scssのコンパイルにエラーがあった場合はデスクトップ通知をする
@@ -27,6 +29,9 @@ gulpを使用するためには下記が必要となります。
 - gulp
 - gulp-autoprefixer
 - gulp-cssmin
+- css-mqpacker
+- gulp-postcss
+- gulp-sourcemaps
 - gulp-notify
 - gulp-plumber
 - gulp-pug
