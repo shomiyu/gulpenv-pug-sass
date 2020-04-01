@@ -1,6 +1,8 @@
 const gulp = require('gulp');
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const mqpacker = require('css-mqpacker');
 const autoprefixer = require('gulp-autoprefixer');
 const cssmin = require('gulp-cssmin');
 const sourcemaps = require('gulp-sourcemaps');
@@ -26,13 +28,12 @@ gulp.task('css', function () {
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
     .pipe(sass({
-      outputStyle: 'expanded',
-      // indentType: 'tab', //コンパイル後のCSSを確認したいとき
-      // indentWidth: 1, //コンパイル後のCSSを確認したいとき
+      outputStyle: 'expanded'
     })) //Sass -> CSS
     .pipe(autoprefixer({ //ベンダープレフィックスを付与
       overrideBrowserslist: 'last 2 versions'
     }))
+    .pipe(postcss([mqpacker()]))
     .pipe(cssmin())
     .pipe(sourcemaps.write('/'))
     .pipe(gulp.dest(paths.dist + '/css'))
