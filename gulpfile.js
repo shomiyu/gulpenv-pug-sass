@@ -3,6 +3,7 @@ const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cssmin = require('gulp-cssmin');
+const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const browsersync = require('browser-sync');
 const notify = require('gulp-notify');
@@ -20,14 +21,20 @@ gulp.task('css', function () {
     paths.src + '/scss/**/*.scss',
     '!' + paths.src + '/scss/**/_*.scss'
   ])
+    .pipe(sourcemaps.init()) // map生成
     .pipe(plumber({ //エラーを検知しデスクトップ通知
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
-    .pipe(sass()) //Sass -> CSS
+    .pipe(sass({
+      outputStyle: 'expanded',
+      // indentType: 'tab', //コンパイル後のCSSを確認したいとき
+      // indentWidth: 1, //コンパイル後のCSSを確認したいとき
+    })) //Sass -> CSS
     .pipe(autoprefixer({ //ベンダープレフィックスを付与
       overrideBrowserslist: 'last 2 versions'
     }))
-    .pipe(cssmin()) //圧縮
+    .pipe(cssmin())
+    .pipe(sourcemaps.write('/'))
     .pipe(gulp.dest(paths.dist + '/css'))
 });
 
